@@ -1,0 +1,402 @@
+<apex:page standardstylesheets="false" showheader="false">
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    </meta>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div class="content">
+        <div class="stepper">
+            <div class="step active">
+                <div class="step-circle">1</div>
+                <div class="step-title">Store Information</div>
+            </div>
+            <div class="step-bar"></div>
+            <div class="step">
+                <div class="step-circle">2</div>
+                <div class="step-title">Delivery Information</div>
+            </div>
+            <div class="step-bar"></div>
+            <div class="step">
+                <div class="step-circle">3</div>
+                <div class="step-title">Order Information</div>
+            </div>
+            <div class="step-bar"></div>
+        </div>
+        <form action="https://cs20.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" name="rekey">
+
+            <input type="hidden" name="orgid" value="00Dm000000091iU" />
+            <input type="hidden" name="retURL" value="https://thunder.hdquotecenter.com" />
+            <input type="hidden" id="recordType" name="recordType" value="012m000000052Y8" />
+            <div id="step1" class="currentstep form-steps" data-status="incomplete">
+                <header>
+                    <h1>Lock Reconfiguration Request Form</h1>
+                    <p>Please fill out all fields of this form to reconfigure locks in an existing order</p>
+                </header>
+                <div class="input-group">
+                    <div class="column">
+                        <div class="row">
+                            <label for="LDAP">LDAP<span class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <input id="LDAP" maxlength="10" name="00Nj000000BzJzp" placeholder="Ex. ABC123" type="text"
+                                required="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="row">
+                        <label for="store">eSVS Order Number<span class="required-field"> (Required)</span></label>
+                    </div>
+                    <div class="row">
+                        <div class="input-group"><span class="input-group-addon">H</span>
+                            <input id="store" maxlength="4" name="00Nm0000002E0e1" pattern="\d{4}" type="text"
+                                title="4 digit store number" required="true"></input><span id="hyphen">-</span><input
+                                id="esvs" maxlength="80" name="00Nj0000007PLJj" size="20" type="number" min="0"
+                                title="Order Number that follows 'HXXXX'" required="true"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="step2" class="masked form-steps" data-status="incomplete">
+                <header>
+                    <h2>
+                        Delivery Address and Contact Information
+                    </h2>
+                </header>
+                <div class="input-group">
+                    <div class="column">
+                        <div class="row">
+                            <label for="street">Street<span class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <input id="street" maxlength="128" size="75" name="00Nj0000007PLRE" type="text"
+                                required="true" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <label for="city">City<span class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <input id="city" maxlength="80" name="00Nj0000007PLRY" size="75" type="text"
+                                required="true" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <label for="state">State<span class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <select id="state" name="00Nj0000007PLRn" title="Jobsite State" required>
+                                <option value=""></option>
+                                <option value="Alabama">Alabama</option>
+                                <option value="Alaska">Alaska</option>
+                                <option value="Arizona">Arizona</option>
+                                <option value="Arkansas">Arkansas</option>
+                                <option value="California">California</option>
+                                <option value="Colorado">Colorado</option>
+                                <option value="Connecticut">Connecticut</option>
+                                <option value="Delaware">Delaware</option>
+                                <option value="District of Columbia">District of Columbia</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Idaho">Idaho</option>
+                                <option value="Illinois">Illinois</option>
+                                <option value="Indiana">Indiana</option>
+                                <option value="Iowa">Iowa</option>
+                                <option value="Kansas">Kansas</option>
+                                <option value="Kentucky">Kentucky</option>
+                                <option value="Louisiana">Louisiana</option>
+                                <option value="Maine">Maine</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Massachusetts">Massachusetts</option>
+                                <option value="Michigan">Michigan</option>
+                                <option value="Minnesota">Minnesota</option>
+                                <option value="Mississippi">Mississippi</option>
+                                <option value="Missouri">Missouri</option>
+                                <option value="Montana">Montana</option>
+                                <option value="Nebraska">Nebraska</option>
+                                <option value="Nevada">Nevada</option>
+                                <option value="New Hampshire">New Hampshire</option>
+                                <option value="New Jersey">New Jersey</option>
+                                <option value="New Mexico">New Mexico</option>
+                                <option value="New York">New York</option>
+                                <option value="North Carolina">North Carolina</option>
+                                <option value="North Dakota">North Dakota</option>
+                                <option value="North Marianas Islands">North Marianas Islands</option>
+                                <option value="Ohio">Ohio</option>
+                                <option value="Oklahoma">Oklahoma</option>
+                                <option value="Oregon">Oregon</option>
+                                <option value="Pennsylvania">Pennsylvania</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Rhode Island">Rhode Island</option>
+                                <option value="South Carolina">South Carolina</option>
+                                <option value="South Dakota">South Dakota</option>
+                                <option value="Tennessee">Tennessee</option>
+                                <option value="Texas">Texas</option>
+                                <option value="Utah">Utah</option>
+                                <option value="Vermont">Vermont</option>
+                                <option value="Virginia">Virginia</option>
+                                <option value="Virgin Islands">Virgin Islands</option>
+                                <option value="Washington">Washington</option>
+                                <option value="West Virginia">West Virginia</option>
+                                <option value="Wisconsin">Wisconsin</option>
+                                <option value="Wyoming">Wyoming</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <label for="zip">ZIP Code<span class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <input id="zip" maxlength="11" name="00Nj0000007PLRs" size="20" type="text"
+                                required="true" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <label for="county">County<span class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <input id="county" maxlength="30" name="00Nm0000002E0ds" size="20" type="text"
+                                required="true" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <label for="workphone">Customer Primary Phone Number<span class="required-field">
+                                    (Required)</span></label>
+                        </div>
+                        <div class="row"><input id="workphone" maxlength="16" name="00Nm0000002E0e3" size="20"
+                                type="tel" required="true" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row"><label for="homephone">Customer Secondary Phone Number<span
+                                    class="required-field"> (Required)</span></label>
+                        </div>
+                        <div class="row">
+                            <input id="homephone" maxlength="16" name="00Nm0000002E0dq" size="20" type="tel"
+                                required="true" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="step3" class="masked form-steps" data-status="incomplete">
+                <header>
+                    <h2>Order Information</h2>
+                    <p>Please define how the locks need to be keyed</p>
+                </header>
+                <div class="column">
+                    <div class="row">
+                        <div class="input-group">
+                            <h3 class="title-master">Master Key</h3>
+                            <input id="masterkey" name="00Nm0000002E0dy" type="checkbox" value="1" />
+                            <label for="masterkey"><span class="check-square"><span></span></span>Add Master Key Across
+                                All
+                                Locks in Order</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="masked" id="master-key-confirm">
+                    <div class="column">
+                        <div class="input-group">
+                            <div class="row">
+                                <label for="masterkeyquantity">Total Number of Keys Needed</label>
+                            </div>
+                            <div class="row">
+                                <input id="masterkeyquantity" name="00Nm0000002E0dz" size="20" type="number" min="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <input id="dndonmaster" name="00Nm0000002E0dp" type="checkbox" value="1" />
+                            <label for="dndonmaster"><span class="check-square"><span></span></span>Stamp "Do Not
+                                Duplicate" on Keys</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="row">
+                        <label for="lockconfig">
+                            <h3>How Would You Like the Locks Keyed?</h3>
+                        </label>
+                    </div>
+                    <div class="row input-group">
+                        <select id="lockconfig" name="00Nm0000002E0dv" title="Locker Order Configuration"
+                            required="true">
+                            <option value="">(Choose an option)</option>
+                            <option value="Leave Locks Keyed As Is">Leave Locks Keyed As Is</option>
+                            <option value="Key Each Lock Uniquely">Key Each Lock Uniquely</option>
+                            <option value="Create Sets of Locks that are Keyed Alike">Create Sets of Locks that are
+                                Keyed Alike</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="masked" id="keyed-alike-sets">
+                    <div class="" id="real-locksets">
+                        <div id="lock-set-1" data-id="1">
+                            <div class="column">
+                                <div class="row">
+                                    <header>
+                                        <h3 class="locksetheading">Keyed Alike Lock Set 1</h3>
+                                        <p>Which locks need to be keyed alike?</p>
+                                    </header>
+                                </div>
+                            </div>
+                            <div class="lineitemdetails">
+                                <div class="column lineitemcolumn1">
+                                    <div class="lineitemrow">
+                                        <div class="lineitemnumber">Order Line Item Number</div>
+                                        <div class="lineitemquantity">Quantity for This Set</div>
+                                    </div>
+                                    <div class="lineitemrow">
+                                        <input type="hidden" name="00Nm0000002E3KZ" value="1">
+                                        <input class="lineitemnumber" placeholder="Ex. SO101" name="00Nm0000002E0dt"
+                                            size="20" type="text" />
+                                        <input class="lineitemquantity" placeholder="Ex. 4" name="00Nm0000002E0du"
+                                            size="10" type="number" min="0" value="0"/>
+                                    </div>
+                                    <div class="lineitemrow">
+                                        <input class="disabledtextbox lineitemnumber" disabled="true" />
+                                        <input class="disabledtextbox lineitemquantity" size="10" disabled="true" />
+                                        <button class="button primary sm addlineitems" type="button" data-id="1"><i
+                                                class="icon_plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="row">
+                                    <label for="key-quantity-1">Total Number of Key Copies Needed</label>
+                                </div>
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input class="key-quantity-1" name="00Nm0000002E0dr" size="10" value="0" type="number"
+                                            min="0" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="secondary-control-container row">
+                                    <input id="dnd-lockset-1" name="00Nm0000002E0do" type="checkbox" value="1" />
+                                    <label for="dnd-lockset-1"><span class="check-square"><span></span></span>Stamp "Do
+                                        Not
+                                        Duplicate" on Keys</label>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="phantom-lock-set">
+                        <div class="column">
+                            <div class="row secondary-control-container">
+                                <header class="ghosted inline-header">
+                                    <h3 id="phantom-heading">Keyed Alike Lock Set 2</h3>
+                                    <p>Which locks need to be keyed alike?</p>
+                                </header>
+                                <button class="button primary sm" type="button" id="addlockset">Add Another
+                                    Set</button>
+                            </div>
+                        </div>
+                        <div class="lineitemdetails">
+                            <div class="column">
+                                <div class="lineitemrow">
+                                    <div class="lineitemnumber ghosted">Order Line Item Number</div>
+                                    <div class="lineitemquantity ghosted">Quantity for This Set</div>
+                                </div>
+                                <div class="lineitemrow">
+                                    <input class="disabledtextbox lineitemnumber" disabled="true" />
+                                    <input class="disabledtextbox lineitemquantity" size="10" disabled="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="row">
+                                <label for="key-quantity-2" class="ghosted">Total Number of Key Copies Needed</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-group">
+                                    <input class="disabledtextbox" size="12" type="text" disabled="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="row">
+                                <input type="checkbox" value="1" disabled="true" />
+                                <label class="ghosted"><span class="check-square"><span></span></span>Stamp "Do Not
+                                    Duplicate" on Keys</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="remaining-locks">
+                        <div class="column">
+                            <div class="row">
+                                <div class="input-group">
+                                    <h3 class="title-master">Remaining Locks in Order</h3>
+                                    <input id="remainder-key-unique" name="00Nm0000002E0e2" type="checkbox" value="1" />
+                                    <label for="remainder-key-unique"><span class="check-square"><span></span></span>Key
+                                        each remaining lock in order uniquely</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="masked" id="uniquely-key-confirm">
+                    <div class="column">
+                        <div class="input-group">
+                            <div class="row">
+                                <label for="remainingnumber">Number of Copies Per Lock</label>
+                            </div>
+                            <div class="row">
+                                <input id="remainingnumber" name="00Nm0000002E9vq" size="20" type="number" min="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <input id="dndonremaining" name="00Nm0000002E9vR" type="checkbox" value="1" />
+                            <label for="dndonremaining"><span class="check-square"><span></span></span>Stamp "Do
+                                Not
+                                Duplicate" on Keys</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="summary" class="masked">
+                    <h3>
+                        Summary
+                    </h3>
+                    <p id="summary-master-key">No Master Key</p>
+                    <div id="summary-sets"></div>
+                    <p id="summary-total"></p>
+                    <p id="summary-remaining-locks">Leave Remaining Locks as is</p>
+                </div>
+                <div id="special-instructions-container">
+                    <div class="input-group">
+                        <div class="column">
+                            <div class="row">
+                                <h3 class="title-master">
+                                    <label for="special-instructions">Special Instructions for Order</label>
+                                </h3>
+                            </div>
+                            <div class="row">
+                                <textarea id="special-instructions" name="00Nm0000002E0e0" rows="6" cols="75"
+                                    type="text" wrap="soft"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="previous-cancel-button-wrapper"><button class="button secondary masked" id="back"
+                        type="button">Back</button>
+                </div>
+                <div class="next-button-wrapper"><button id="next" class="button primary" type="button"
+                        disabled="true">Next<i class="icon_arrow-right"></i></button></div>
+            </footer>
+
+        </form>
+    </div>
+    <script src="./formcontrol.js"></script>
+</apex:page>
